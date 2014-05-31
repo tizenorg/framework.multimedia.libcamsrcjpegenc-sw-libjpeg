@@ -1,0 +1,20 @@
+Source: libcamsrcjpegenc-sw-libjpeg
+Section: libs
+Priority: extra
+Maintainer: Jeongmo Yang <jm80.yang@samsung.com>
+Uploaders: Jeongmo Yang <jm80.yang@samsung.com>, Sangchul Lee <sc11.lee@samsung.com>
+Build-Depends: debhelper (>= 5), autotools-dev, dlog-dev, libglib2.0-dev, libjpeg8-dev, libcamsrcjpegenc-dev, libmm-utility-dev
+Standards-Version: 3.7.2
+
+Package: libcamsrcjpegenc-sw-libjpeg
+Section: libs
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, libdlog-0, libglib2.0-0, libjpeg8
+Description: Multimedia Framework Camera Src Jpeg Encoder Library (Libjpeg)
+ 
+Package: libcamsrcjpegenc-sw-libjpeg-dbg
+Section: debug
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, libcamsrcjpegenc-sw-libjpeg (= ${Source-Version})
+Description: Multimedia Framework Camera Src Jpeg Encoder Library (Libjpeg) (unstripped)
+

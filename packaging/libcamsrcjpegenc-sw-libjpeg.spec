@@ -1,6 +1,6 @@
 Name:       libcamsrcjpegenc-sw-libjpeg
 Summary:    Multimedia Framework Camera Src Jpeg Encoder Library (libjpeg) (unstripped)
-Version:    0.1.14
+Version:    0.1.15
 Release:    0
 Group:      libdevel
 License:    Apache-2.0
@@ -18,6 +18,7 @@ Multimedia Framework Camera Src Jpeg Encoder Library (libjpeg)
 %setup -q -n %{name}-%{version}
 
 %build
+export CFLAGS+=" -Wall -Wcast-align -Wcast-qual -Wextra -Wno-array-bounds -Wno-empty-body -Wno-ignored-qualifiers -Wno-unused-parameter -Wshadow -Wwrite-strings -Wswitch-default -Wno-unused-but-set-parameter -Wno-unused-but-set-variable"
 %if 0%{?sec_build_binary_debug_enable}
 export CFLAGS+=" -DTIZEN_DEBUG_ENABLE"
 %endif

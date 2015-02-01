@@ -216,8 +216,8 @@ int  camsrcjpegencsub_encode ( jpegenc_parameter *enc_param )
 	JSAMPROW data_y[DCTSIZE*2];
 	JSAMPROW data_cb[DCTSIZE];
 	JSAMPROW data_cr[DCTSIZE];
-	gint i = 0;
-	gint j = 0;
+	unsigned int i = 0;
+	int j = 0;
 
 	struct jpeg_compress_struct cinfo;
 	struct jpeg_error_mgr jerr;
@@ -623,7 +623,7 @@ _jpegenc_convert_YUV_to_RGB888(unsigned char *src, int src_fmt, guint width, gui
 
 static gboolean _jpegenc_convert_YUYV_to_I420(unsigned char *src, guint width, guint height, unsigned char **dst, unsigned int *dst_len)
 {
-	int i = 0;
+	unsigned int i = 0;
 	int j = 0;
 	int src_offset = 0;
 	int dst_y_offset = 0;
@@ -682,7 +682,7 @@ static gboolean _jpegenc_convert_YUYV_to_I420(unsigned char *src, guint width, g
 
 static gboolean _jpegenc_convert_UYVY_to_I420(unsigned char *src, guint width, guint height, unsigned char **dst, unsigned int *dst_len)
 {
-	int i = 0;
+	unsigned int i = 0;
 	int j = 0;
 	int src_offset = 0;
 	int dst_y_offset = 0;

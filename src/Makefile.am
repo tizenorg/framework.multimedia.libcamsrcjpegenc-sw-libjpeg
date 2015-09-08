@@ -9,14 +9,14 @@ libcamsrcjpegenc_sw_la_CFLAGS = -I$(srcdir)/include \
                                 $(CAMSRCJPEGENC_CFLAGS) \
                                 $(MMUTIL_IMGP_CFLAGS)
 
-libcamsrcjpegenc_sw_la_LIBADD = $(GLIB_LIBS) \
+if USE_DLOG
+libcamsrcjpegenc_sw_la_CFLAGS += $(DLOG_CFLAGS)\
+			-DUSE_DLOG
+endif
+
+libcamsrcjpegenc_sw_la_LIBADD = $(DLOG_LIBS) \
+                                $(GLIB_LIBS) \
                                 $(LIBJPEG_LIBS) \
                                 $(CAMSRCJPEGENC_LIBS) \
                                 $(MMUTIL_IMGP_LIBS)
-
-if USE_DLOG
-libcamsrcjpegenc_sw_la_CFLAGS += $(DLOG_CFLAGS) -DUSE_DLOG
-
-libcamsrcjpegenc_sw_la_LIBADD += $(DLOG_LIBS)
-endif
 

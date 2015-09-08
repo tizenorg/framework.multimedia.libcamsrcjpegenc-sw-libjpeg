@@ -65,6 +65,8 @@ AC_SUBST(MMUTIL_IMGP_LIBS)
 LIBJPEG_LIBS="-ljpeg"
 AC_SUBST(LIBJPEG_LIBS)
 
+#AM_CONDITIONAL([ISPROTECTOR_VODA_SDK], [test "x$DISTRO" = "xvodafone-sdk" && test "x$MACHINE" = "xprotector"])
+
 AC_CONFIG_FILES([Makefile
                  src/Makefile
 ])
